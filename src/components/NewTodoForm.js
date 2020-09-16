@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import uuid from "uuid/v4";
-import "../assets/css/NewTodoForm.min.css"
+import "../assets/scss/NewTodoForm.scss";
 
 export default class NewTodoForm extends Component {
   state = {
-    task: ""
+    task: "",
   };
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     });
   };
 
-  handleSubmit = evt => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
-    this.props.create({ ...this.state, id: uuid(), isComplete:false });
+    this.props.create({ ...this.state, id: uuid(), isComplete: false });
     this.setState({ task: "" });
   };
 
@@ -30,6 +30,7 @@ export default class NewTodoForm extends Component {
           value={this.state.task}
           placeholder="Add new Todo"
           onChange={this.handleChange}
+          maxLength={25}
           required
         />
         <button>Add Todo</button>

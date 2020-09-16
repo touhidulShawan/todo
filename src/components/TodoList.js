@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
-import "../assets/css/TodoList.min.css";
+import "../assets/scss/TodoList.scss";
 
 export default class TodoList extends Component {
   state = {
-    tasks: []
+    tasks: [],
   };
 
-  createTodo = newTodo => {
+  createTodo = (newTodo) => {
     this.setState({
-      tasks: [...this.state.tasks, newTodo]
+      tasks: [...this.state.tasks, newTodo],
     });
   };
 
-  removeTodo = id => {
-    this.setState({ tasks: this.state.tasks.filter(todo => todo.id !== id) });
+  removeTodo = (id) => {
+    this.setState({ tasks: this.state.tasks.filter((todo) => todo.id !== id) });
   };
 
   updateTodo = (id, updatedTask) => {
-    const updateTodos = this.state.tasks.map(todo => {
+    const updateTodos = this.state.tasks.map((todo) => {
       if (todo.id === id) {
         return { ...todo, task: updatedTask };
       } else {
@@ -31,7 +31,7 @@ export default class TodoList extends Component {
   };
 
   updateCompletion = (id) => {
-    const updateComplete = this.state.tasks.map(todo => {
+    const updateComplete = this.state.tasks.map((todo) => {
       if (todo.id === id) {
         return { ...todo, isComplete: !todo.isComplete };
       } else {
@@ -43,7 +43,7 @@ export default class TodoList extends Component {
   };
 
   render() {
-    const todos = this.state.tasks.map(todo => {
+    const todos = this.state.tasks.map((todo) => {
       return (
         <Todo
           task={todo.task}
@@ -51,7 +51,7 @@ export default class TodoList extends Component {
           id={todo.id}
           removeTodo={this.removeTodo}
           update={this.updateTodo}
-          isComplete = {todo.isComplete}
+          isComplete={todo.isComplete}
           updateCompletion={this.updateCompletion}
         />
       );
@@ -59,7 +59,9 @@ export default class TodoList extends Component {
 
     return (
       <div className="TodoList">
-        <h1>Todo List<span>A simple react todo list</span></h1>
+        <h1>
+          Todo List<span>A simple react todo list</span>
+        </h1>
         <NewTodoForm create={this.createTodo} />
         <ul>{todos}</ul>
       </div>
