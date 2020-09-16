@@ -1,1 +1,1 @@
-# A simple todo app by Reactjs from a course
+# A simple todo app by Reactjs 
