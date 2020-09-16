@@ -1,7 +1,7 @@
 .NewTodoForm {
   margin-top: 1rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 
   label {
     min-width: 100%;
