@@ -1,81 +1,94 @@
-.Todo{
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -3rem 4px;
+  padding: 1.1rem 3rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+
+  &-complete {
+    opacity: 0.6;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -0.5rem;
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: #fff;
+      animation: strikeLine 0.5s ease-out 0s forwards;
+    }
+  }
+
+  &-edit {
+    padding: 0.3rem 0.8rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    border: none;
+    background: #8b78e6;
+    color: #f7f1f1;
+    font-size: 0.85rem;
+  }
+
+  &-delete {
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    border: none;
+    background: #e74292;
+    color: #fff;
+    font-size: 0.85rem;
+  }
+
+  &-form {
+    // margin-bottom: 0.8rem;
+    // margin-top: 0.5rem;
     display: flex;
     justify-content: space-between;
-    margin: 0 -3rem 4px;
-    padding: 1.1rem 3rem;
-    align-items: center;
-    background: rgba(255,255,255, 0.1);
-
-    &-complete{
-       opacity: 0.6;
-       position: relative;
-
-       &::before{
-           content: "";
-           position: absolute;
-           top: 50%;
-           left: -0.5rem;
-           display: block;
-           width: 0%;
-           height: 2px;
-           background: #fff;
-           animation: strikeLine 0.5s ease-out 0s forwards;
-       }
+    input {
+      border: none;
+      background: #f7f1f1;
+      padding: 0.6rem 1.5rem;
+      font-size: initial;
+      // margin-bottom: 1rem;
     }
 
-
-    &-edit{
-        padding: .3rem .8rem;
-        margin-right: .5rem;
-        cursor: pointer;
-        border: none;
-        background: #8B78E6;
-        color:#f7f1f1;
-        font-size: .85rem;
-
-
+    button {
+      padding: 0 2.3rem;
+      border: none;
+      background: #10a881;
+      color: #fff;
+      font-size: 1rem;
+      border-bottom: 5px solid inherit;
+      cursor: pointer;
+      &:hover {
+        background: #1bca9b;
+      }
     }
-
-    &-delete{
-        padding: .3rem .8rem;
-        cursor: pointer;
-        border: none;
-        background: #E74292;
-        color: #fff;
-        font-size: .85rem;
-    
-    }
-
-
-    &-form{
-        margin-bottom: .8rem;
-        margin-top: .5rem;
-        input{
-            border: none;
-            background: #f7f1f1;
-            padding: .6rem 1.5rem;
-            font-size: initial;
-        }
-
-        button{
-            padding: .65rem 1.3rem;
-        border: none;
-        background: #10A881;
-        color: #fff;
-        font-size: .8rem;
-        cursor: pointer;
-        &:hover{
-            background: #1BCA9B;
-        }
-        }
-    }
-
-
-
+  }
 }
 
 @keyframes strikeLine {
-    to{
-        width: calc(100% + 1rem);
+  to {
+    width: calc(100% + 1rem);
+  }
+}
+
+@media (max-width: 500px) {
+  .Todo {
+    &-form {
+      flex-wrap: wrap;
+
+      input {
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+
+      button {
+        padding: 0.55rem 2.3rem;
+      }
     }
+  }
 }

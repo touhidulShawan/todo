@@ -1,6 +1,7 @@
 import React from "react";
 import TodoList from "../components/TodoList";
-import "../assets/css/App.min.css";
+import "../assets/scss/App.scss";
+
 const App = () => {
   return (
     <div>

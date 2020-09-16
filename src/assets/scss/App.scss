@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,7 @@
 html,
 body {
   height: 100%;
-  background: linear-gradient(90deg, #30336B,#74B9FF,#6A89CC);
+  background: linear-gradient(90deg, #30336b, #74b9ff, #6a89cc);
   font-size: 1.1rem;
-  
+  font-family: "Open Sans", sans-serif;
 }
